@@ -8,6 +8,15 @@ selections.appendChild(dimensionButton)
 
 dimensionButton.addEventListener('click',()=>{
     gridDimension=prompt('how many squares per a side?')
+    while(gridDimension<0||gridDimension>100||isNaN(gridDimension)){
+        if(gridDimension<0||isNaN(gridDimension)){
+            alert('invalid!')
+            gridDimension=prompt('how many squares per a side?')
+        }else if(gridDimension>100){
+            alert('too large!')
+            gridDimension=prompt('how many squares per a side?')
+        }
+    }
     for(i=0;i<gridDimension**2;i++){
         gridDiv=document.createElement('div')
         gridDiv.classList.add('grid-div')
