@@ -70,10 +70,13 @@ blackButton.addEventListener('click',()=>{
 })
 
 rainbowButton.addEventListener('click',()=>{
-    randomRedValue=Math.floor(Math.random()*256)
-    randomGreenValue=Math.floor(Math.random()*256)
-    randomBlueValue=Math.floor(Math.random()*256)
-    backgroundColor=`rgb(${randomRedValue},${randomGreenValue},${randomBlueValue})`
+    let randomRedValue,randomGreenValue,randomBlueValue
+    window.addEventListener('mousemove',()=>{
+        randomRedValue=Math.floor(Math.random()*256)
+        randomGreenValue=Math.floor(Math.random()*256)
+        randomBlueValue=Math.floor(Math.random()*256)
+        backgroundColor=`rgb(${randomRedValue},${randomGreenValue},${randomBlueValue})`
+    })
 })
 
 clearButton.addEventListener('click',()=>{
