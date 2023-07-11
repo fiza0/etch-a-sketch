@@ -50,3 +50,7 @@ button {
     border-color:#e63946;
     transform:scale(1.2);
 }
+ 
+button.urgent {
+    background-color:#e63946;
+}

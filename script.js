@@ -7,6 +7,7 @@ selections=document.querySelector('.selections')
         //button that prompts user for dimensions
 let dimensionButton=document.createElement('button')
 dimensionButton.textContent='how many squares per a side?'
+dimensionButton.classList.add('urgent')
 selections.appendChild(dimensionButton)
         //button that changes color to black
 let blackButton=document.createElement('button')
