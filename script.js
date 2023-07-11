@@ -1,5 +1,6 @@
 let gridDimension
 let backgroundColor
+let gridDivs=document.querySelectorAll('.grid-div')
 
 dimensionButton=document.createElement('button')
 dimensionButton.textContent='how many squares per a side?'
@@ -10,7 +11,6 @@ dimensionButton.addEventListener('click',()=>{
     let gridDiv
     let gridDivDimensions
     //clears canvas before creating specified number of divs
-    let gridDivs=document.querySelectorAll('.grid-div')
     gridDivs.forEach(gridDiv=>{
         gridDiv.remove()
     })
@@ -49,4 +49,15 @@ dimensionButton.addEventListener('click',()=>{
     })
 
 })
+let clearButton=document.createElement('button')
+clearButton.textContent='CLEAR'
+selections.appendChild(clearButton)
+
+clearButton.addEventListener('click',()=>{
+    gridDivs.forEach(gridDiv=>{
+        backgroundColor='white'
+            gridDiv.style.backgroundColor=`${backgroundColor}`
+    })
+})
+
 
