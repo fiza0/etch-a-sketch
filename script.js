@@ -1,5 +1,15 @@
-let gridDimension=16
+let gridDimension
 let backgroundColor
+
+while(true){
+    gridDimension=prompt('enter your prefered dimension')
+    if(gridDimension>100){
+        alert('too large!')
+        continue
+    }else if(gridDimension<=0){
+        alert('invalid')
+    }else break
+}
 for(i=0;i<gridDimension**2;i++){
     gridDiv=document.createElement('div')
     gridDiv.classList.add('grid-div')
