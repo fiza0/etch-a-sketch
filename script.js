@@ -7,6 +7,12 @@ selections=document.querySelector('.selections')
 selections.appendChild(dimensionButton)
 
 dimensionButton.addEventListener('click',()=>{
+    let gridDiv
+    let gridDivDimensions
+    let gridDivs=document.querySelectorAll('.grid-div')
+    gridDivs.forEach(gridDiv=>{
+        gridDiv.remove()
+    })
     while(true){
         gridDimension=prompt('how many squares per a side?')
         if(gridDimension>100){
