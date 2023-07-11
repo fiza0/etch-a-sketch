@@ -11,26 +11,37 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background:url() no-repeat;
-    background-position: center;
-    background-size: cover;
+    background:#ab20fd;
 }
-.title,.selections{
-    max-width: 480px;
-}
-.title {
-margin:20px;
+.content-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 48px;
+    margin:24px;
 }
 .sketch-zone {
     display:flex;
     flex-wrap:wrap;
     height:480px;
     width:480px;
-    border:10px solid grey;
-    
+    border:10px solid grey;   
+}
+.selections {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 .grid-div {
     flex:auto;
     background-color: white;
-
+    z-index:2;
+}
+button {
+    background-color: #7d12ff;
+    color:white;
+    font-size: 15px;
+    font-weight: 400;
+    padding:10px;
+    border-radius: 20px;
 }

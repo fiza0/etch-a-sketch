@@ -44,9 +44,7 @@ dimensionButton.addEventListener('click',()=>{
     gridDivs.forEach(gridDiv=>{
         gridDiv.addEventListener('mouseover',()=>{
             backgroundColor='black'
-            gridDiv.style.backgroundColor=`${backgroundColor}`
-                
-            
+            gridDiv.style.backgroundColor=`${backgroundColor}`    
         })
     })
 
