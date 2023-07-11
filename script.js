@@ -21,6 +21,10 @@ selections.appendChild(rainbowButton)
 let eraserButton=document.createElement('button')
 eraserButton.textContent='ERASER'
 selections.appendChild(eraserButton)
+        //button that makes no changes to the DOM
+let noneButton=document.createElement('button')
+noneButton.textContent='NONE'
+selections.appendChild(noneButton)
         //button that clears the canvas
 let clearButton=document.createElement('button')
 clearButton.textContent='CLEAR'
@@ -89,6 +93,13 @@ eraserButton.addEventListener('click',()=>{
     eraserButton.classList.toggle('selected')
     window.removeEventListener('mousemove',getRandomColor)
     backgroundColor='white'
+})
+//makes no changes to the sketchpad
+noneButton.addEventListener('click',()=>{
+    removeOtherButtonsHighlight()
+    noneButton.classList.toggle('selected')
+    window.removeEventListener('mousemove',getRandomColor)
+    backgroundColor=this
 })
 //clears the canvas
 clearButton.addEventListener('click',()=>{
