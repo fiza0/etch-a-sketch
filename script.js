@@ -1,11 +1,27 @@
 let gridDimension
 let backgroundColor
 let gridDivs=document.querySelectorAll('.grid-div')
-
-dimensionButton=document.createElement('button')
-dimensionButton.textContent='how many squares per a side?'
 selections=document.querySelector('.selections')
+
+//create buttons
+
+let dimensionButton=document.createElement('button')
+dimensionButton.textContent='how many squares per a side?'
 selections.appendChild(dimensionButton)
+
+let blackButton=document.createElement('button')
+blackButton.textContent='BLACK'
+selections.appendChild(blackButton)
+
+let rainbowButton=document.createElement('button')
+rainbowButton.textContent='RAINBOW'
+selections.appendChild(rainbowButton)
+
+let clearButton=document.createElement('button')
+clearButton.textContent='CLEAR'
+selections.appendChild(clearButton)
+
+//add event listeners to buttons
 
 dimensionButton.addEventListener('click',()=>{
     let gridDiv
@@ -43,15 +59,22 @@ dimensionButton.addEventListener('click',()=>{
     gridDivs=document.querySelectorAll('.grid-div')
     gridDivs.forEach(gridDiv=>{
         gridDiv.addEventListener('mouseover',()=>{
-            backgroundColor='black'
             gridDiv.style.backgroundColor=`${backgroundColor}`    
         })
     })
 
 })
-let clearButton=document.createElement('button')
-clearButton.textContent='CLEAR'
-selections.appendChild(clearButton)
+
+blackButton.addEventListener('click',()=>{
+    backgroundColor='black'
+})
+
+rainbowButton.addEventListener('click',()=>{
+    randomRedValue=Math.floor(Math.random()*256)
+    randomGreenValue=Math.floor(Math.random()*256)
+    randomBlueValue=Math.floor(Math.random()*256)
+    backgroundColor=`rgb(${randomRedValue},${randomGreenValue},${randomBlueValue})`
+})
 
 clearButton.addEventListener('click',()=>{
     gridDivs.forEach(gridDiv=>{
