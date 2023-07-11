@@ -3,3 +3,21 @@
     padding:0px;
     box-sizing: border-box;
 }
+body {
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sketch-zone {
+    display:flex;
+    flex-wrap:wrap;
+    gap:1px;
+    height:960px;
+    width:960px;
+}
+.grid-div {
+    border:5px solid black;
+    flex:auto;
+
+}
