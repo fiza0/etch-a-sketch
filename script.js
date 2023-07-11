@@ -70,21 +70,28 @@ dimensionButton.addEventListener('click',()=>{
 })
 //disables rainbow button and changes color to black
 blackButton.addEventListener('click',()=>{
+    removeOtherButtonsHighlight()
+    blackButton.classList.toggle('selected')
     window.removeEventListener('mousemove',getRandomColor)
     backgroundColor='black'
 })
 //everytime the mouse moves on the window,a random color is generated and used
 rainbowButton.addEventListener('click',()=>{
+    removeOtherButtonsHighlight()
+    rainbowButton.classList.toggle('selected')
     let randomRedValue,randomGreenValue,randomBlueValue
     window.addEventListener('mousemove',getRandomColor)
 })
 //disables rainbow button and changes color to white
 eraserButton.addEventListener('click',()=>{
+    removeOtherButtonsHighlight()
+    eraserButton.classList.toggle('selected')
     window.removeEventListener('mousemove',getRandomColor)
     backgroundColor='white'
 })
 //clears the canvas
 clearButton.addEventListener('click',()=>{
+    removeOtherButtonsHighlight()
     gridDivs.forEach(gridDiv=>{
         backgroundColor='white'
             gridDiv.style.backgroundColor=`${backgroundColor}`
@@ -98,5 +105,11 @@ function getRandomColor(){
     randomBlueValue=Math.floor(Math.random()*256)
     backgroundColor=`rgb(${randomRedValue},${randomGreenValue},${randomBlueValue})`
 }
-
+//unhighlights other buttons when a button is selected
+function removeOtherButtonsHighlight(){
+    buttons=document.querySelectorAll('button')
+    buttons.forEach(button=>{
+        button.classList.remove('selected')
+    })
+}
 
