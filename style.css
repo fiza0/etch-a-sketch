@@ -8,16 +8,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    background:url(pexels-photo-2249961.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.title,.introduction {
+    max-width: 480px;
 }
 .sketch-zone {
     display:flex;
     flex-wrap:wrap;
-    gap:1px;
-    height:960px;
-    width:960px;
+    height:480px;
+    width:480px;
+    border:10px solid grey;
 }
 .grid-div {
-    border:5px solid black;
     flex:auto;
+    background-color: white;
 
 }
