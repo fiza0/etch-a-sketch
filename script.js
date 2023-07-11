@@ -4,19 +4,19 @@ let gridDivs=document.querySelectorAll('.grid-div')
 selections=document.querySelector('.selections')
 
 //create buttons
-
+        //button that prompts user for dimensions
 let dimensionButton=document.createElement('button')
 dimensionButton.textContent='how many squares per a side?'
 selections.appendChild(dimensionButton)
-
+        //button that changes color to black
 let blackButton=document.createElement('button')
 blackButton.textContent='BLACK'
 selections.appendChild(blackButton)
-
+        //button that randomizes color
 let rainbowButton=document.createElement('button')
 rainbowButton.textContent='RAINBOW'
 selections.appendChild(rainbowButton)
-
+        //button that clears the canvas
 let clearButton=document.createElement('button')
 clearButton.textContent='CLEAR'
 selections.appendChild(clearButton)
@@ -55,7 +55,7 @@ dimensionButton.addEventListener('click',()=>{
         sketchZone.appendChild(gridDiv)
     }
     /*loops over each div in the sketch zone and adds an event listener that changes its color
-    to black when it is hovered on */
+    to black(or specified color) when it is hovered on */
     gridDivs=document.querySelectorAll('.grid-div')
     gridDivs.forEach(gridDiv=>{
         gridDiv.addEventListener('mouseover',()=>{
@@ -64,26 +64,30 @@ dimensionButton.addEventListener('click',()=>{
     })
 
 })
-
+//disables rainbow button and changes color to black
 blackButton.addEventListener('click',()=>{
+    window.removeEventListener('mousemove',getRandomColor)
     backgroundColor='black'
 })
-
+//everytime the mouse moves on the window,a random color is generated and used
 rainbowButton.addEventListener('click',()=>{
     let randomRedValue,randomGreenValue,randomBlueValue
-    window.addEventListener('mousemove',()=>{
-        randomRedValue=Math.floor(Math.random()*256)
-        randomGreenValue=Math.floor(Math.random()*256)
-        randomBlueValue=Math.floor(Math.random()*256)
-        backgroundColor=`rgb(${randomRedValue},${randomGreenValue},${randomBlueValue})`
-    })
+    window.addEventListener('mousemove',getRandomColor)
 })
-
+//clears the canvas
 clearButton.addEventListener('click',()=>{
     gridDivs.forEach(gridDiv=>{
         backgroundColor='white'
             gridDiv.style.backgroundColor=`${backgroundColor}`
     })
 })
+/*generates random color by randomizing red,green and blue values .This runs everytime
+the cursor moves on the window*/
+function getRandomColor(){
+    randomRedValue=Math.floor(Math.random()*256)
+    randomGreenValue=Math.floor(Math.random()*256)
+    randomBlueValue=Math.floor(Math.random()*256)
+    backgroundColor=`rgb(${randomRedValue},${randomGreenValue},${randomBlueValue})`
+}
 
 
