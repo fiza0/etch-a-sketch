@@ -16,6 +16,10 @@ selections.appendChild(blackButton)
 let rainbowButton=document.createElement('button')
 rainbowButton.textContent='RAINBOW'
 selections.appendChild(rainbowButton)
+        //button that changes color back to white
+let eraserButton=document.createElement('button')
+eraserButton.textContent='ERASER'
+selections.appendChild(eraserButton)
         //button that clears the canvas
 let clearButton=document.createElement('button')
 clearButton.textContent='CLEAR'
@@ -73,6 +77,11 @@ blackButton.addEventListener('click',()=>{
 rainbowButton.addEventListener('click',()=>{
     let randomRedValue,randomGreenValue,randomBlueValue
     window.addEventListener('mousemove',getRandomColor)
+})
+//disables rainbow button and changes color to white
+eraserButton.addEventListener('click',()=>{
+    window.removeEventListener('mousemove',getRandomColor)
+    backgroundColor='white'
 })
 //clears the canvas
 clearButton.addEventListener('click',()=>{
