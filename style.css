@@ -14,6 +14,7 @@ body {
     background:#ab20fd;
 }
 .content-container {
+    flex:1;
     display: flex;
     justify-content: space-around;
     gap: 48px;
