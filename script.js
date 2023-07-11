@@ -1,4 +1,5 @@
-gridDimension=16
+let gridDimension=16
+let backgroundColor
 for(i=0;i<gridDimension**2;i++){
     gridDiv=document.createElement('div')
     gridDiv.classList.add('grid-div')
@@ -8,3 +9,12 @@ for(i=0;i<gridDimension**2;i++){
     sketchZone=document.querySelector('.sketch-zone')
     sketchZone.appendChild(gridDiv)
 }
+gridDivs=document.querySelectorAll('.grid-div')
+gridDivs.forEach(gridDiv=>{
+    gridDiv.addEventListener('mouseover',()=>{
+        backgroundColor='black'
+        gridDiv.style.backgroundColor=`${backgroundColor}`
+            
+        
+    })
+})

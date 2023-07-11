@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellota:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 * {
     margin: 0px;
     padding:0px;
     box-sizing: border-box;
+    font-family: 'Bellota',sans-serif;
 }
 body {
     height:100vh;
@@ -9,12 +11,15 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background:url(pexels-photo-2249961.webp) no-repeat;
+    background:url() no-repeat;
     background-position: center;
     background-size: cover;
 }
-.title,.introduction {
+.title,.selections{
     max-width: 480px;
+}
+.title {
+margin:20px;
 }
 .sketch-zone {
     display:flex;
@@ -22,6 +27,7 @@ body {
     height:480px;
     width:480px;
     border:10px solid grey;
+    
 }
 .grid-div {
     flex:auto;
