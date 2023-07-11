@@ -2,7 +2,7 @@ let gridDimension
 let backgroundColor
 
 while(true){
-    gridDimension=prompt('enter your prefered dimension')
+    gridDimension=prompt('how many squares per a side?')
     if(gridDimension>100){
         alert('too large!')
         continue
